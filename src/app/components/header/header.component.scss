@@ -1,0 +1,14 @@
+header {
+  padding: 10px 20px;
+  background-color: #212529;
+  color: white;
+
+  .logo {
+    display: flex;
+    align-items: center;
+
+    &-img {
+      margin-right: 10px;
+    }
+  }
+}
