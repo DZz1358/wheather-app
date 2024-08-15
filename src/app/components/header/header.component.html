@@ -19,5 +19,14 @@
     </div>
     <span>Weather-Forecast</span>
   </div>
-  <div></div>
+  <div class="search">
+    <input placeholder="Enter your city" id="city" type="text" [(ngModel)]="value">
+
+    <button matSuffix mat-icon-button (click)="value = ''">
+      <mat-icon>close</mat-icon>
+    </button>
+
+    <!-- <button class="clear-button" onclick="clearInput()">✕</button> -->
+
+  </div>
 </header>

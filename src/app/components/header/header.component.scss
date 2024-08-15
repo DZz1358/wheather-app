@@ -1,4 +1,7 @@
 header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 10px 20px;
   background-color: #212529;
   color: white;
@@ -11,4 +14,29 @@ header {
       margin-right: 10px;
     }
   }
+
+
+  .search {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+
+    & input {
+      width: 100%;
+      padding: 10px 45px 10px 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    & button {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
 }
