@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "./components/header/header.component";
+import { WeatherService } from './services/weather.service';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,8 @@ export class AppComponent implements OnInit {
   title = 'weather-app';
   weatherData: any;
   error: string = '';
+
+  weatherService = inject(WeatherService);
 
   ngOnInit(): void {
     this.getLocation();
@@ -38,10 +41,13 @@ export class AppComponent implements OnInit {
 
 
   getWeather(lat: number, lon: number) {
-    // this.weatherService.getWeather(lat, lon).subscribe(
-    //   data => this.weatherData = data,
-    //   error => this.error = 'Не удалось получить данные о погоде'
-    // );
+    this.weatherService.getWeather(lat, lon).subscribe((data) => {
+      console.log('data', data)
+      // data => this.weatherData = data,
+      // error => this.error = 'Не удалось получить данные о погоде'
+
+    }
+    );
 
     console.log('lat', lat, 'lon', lon)
 
