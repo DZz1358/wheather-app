@@ -22,4 +22,26 @@ export class WeatherService {
   getCurrentWeather(city: string) {
     return this.http.get(`${this.API_URL}/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid=${this.API_KEY}`)
   }
+
+  setGeolocationToLocalStorage(lat: number, lon: number) {
+    const currentGeolocation = {
+      lat: lat,
+      lon: lon,
+      name: 'Current place',
+      date: new Date()
+    }
+
+    localStorage.setItem('savedLocation', JSON.stringify(currentGeolocation));
+  }
+
+  getGeolocationFromLocalStorage() {
+    let currentGeolocation = {}
+
+    if (localStorage.getItem('savedLocation')) {
+      currentGeolocation = JSON.parse(localStorage.getItem('savedLocation') ?? 'null')
+    }
+
+    return currentGeolocation;
+  }
+
 }

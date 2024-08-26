@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatTabsModule } from '@angular/material/tabs';
 
 @Component({
@@ -8,6 +8,13 @@ import { MatTabsModule } from '@angular/material/tabs';
   templateUrl: './body-layout.component.html',
   styleUrl: './body-layout.component.scss'
 })
-export class BodyLayoutComponent {
+export class BodyLayoutComponent implements OnInit {
+
+  @Input() currentLocation: any
+
+
+  ngOnInit(): void {
+    console.log('currentLocation', this.currentLocation)
+  }
 
 }
