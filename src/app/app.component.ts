@@ -46,7 +46,7 @@ export class AppComponent implements OnInit {
 
 
   getWeather(lat: number, lon: number) {
-    this.weatherService.getWeather(lat, lon).subscribe((data) => {
+    this.weatherService.getCurrentWeather(lat, lon).subscribe((data) => {
       console.log('data', data)
       this.currentLocation = data
       // data => this.weatherData = data,

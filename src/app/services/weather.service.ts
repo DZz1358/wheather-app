@@ -15,12 +15,8 @@ export class WeatherService {
     return this.http.get(`XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX${city}&appid=${this.API_KEY}&units=metric`)
   }
 
-  getWeather(lat: number, lon: number) {
+  getCurrentWeather(lat: number, lon: number) {
     return this.http.get(`${this.API_URL}/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${this.API_KEY}`)
-  }
-
-  getCurrentWeather(city: string) {
-    return this.http.get(`${this.API_URL}/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid=${this.API_KEY}`)
   }
 
   setGeolocationToLocalStorage(lat: number, lon: number) {
